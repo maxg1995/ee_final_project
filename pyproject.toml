@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ee-final-project"
+version = "0.1.0"
+description = ""
+authors = ["maxgmaxg <max@laminarsecurity.com>"]
+readme = "README.md"
+packages = [{include = "ee_final_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+matplotlib = "^3.6.2"
+numpy = "^1.24.1"
+torchvision = "^0.14.1"
+torch = "^1.13.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
