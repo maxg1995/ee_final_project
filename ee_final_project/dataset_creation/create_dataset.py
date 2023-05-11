@@ -59,18 +59,18 @@ async def create_dataset(
         numbers_list=numbers,
         data_with_labels=results,
     )
-    return dataset
+    return dataset, numbers
 
 
-async def create_datasets() -> tuple[MNISTNumbersDataset, MNISTNumbersDataset]:
+async def create_datasets() -> tuple[MNISTNumbersDataset, MNISTNumbersDataset, list[int]]:
     print("creating training dataset")
-    training_dataset = await create_dataset(
+    training_dataset, training_list = await create_dataset(
         NUM_OF_DIGITS,
         TRAIN_IMAGES_TO_GEN,
         DISTRIBUTION,
     )
     print("creating test dataset")
-    test_dataset = await create_dataset(
+    test_dataset, test_list = await create_dataset(
         NUM_OF_DIGITS,
         TEST_IMAGES_TO_GEN,
         DISTRIBUTION,
@@ -84,4 +84,4 @@ async def create_datasets() -> tuple[MNISTNumbersDataset, MNISTNumbersDataset]:
         training_dataset,
         f"{DIGIT_DIR}/mnist_{NUM_OF_DIGITS}_digit_{DISTRIBUTION}_distribution_test_data",
     )
-    return training_dataset, test_dataset
+    return training_dataset, test_dataset, training_list
