@@ -2,10 +2,11 @@ import asyncio
 from pathlib import Path
 
 import torch
-from env import NUM_OF_DIGITS, SAMPLES_DIR, TRAIN_IMAGES_TO_GEN, device
-from gan.gan_base import Generator
 from torch.autograd import Variable
 from torchvision.utils import save_image
+
+from ee_final_project.env import NUM_OF_DIGITS, SAMPLES_DIR, TRAIN_IMAGES_TO_GEN, device
+from ee_final_project.gan.gan_base import Generator
 
 
 async def generate_image(G: Generator, index: int):

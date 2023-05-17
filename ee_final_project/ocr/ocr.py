@@ -3,8 +3,9 @@ import os
 
 import numpy as np
 import pytesseract
-from env import SAMPLES_DIR
 from PIL import Image
+
+from ee_final_project.env import SAMPLES_DIR
 
 
 async def ocr(file_name: str):

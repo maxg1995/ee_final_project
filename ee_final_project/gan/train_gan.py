@@ -1,10 +1,8 @@
-from pathlib import Path
-
 import torch
-from env import BATCH_SIZE, DIGIT_DIR, EPOCHS, NUM_OF_DIGITS, device
 from torch.autograd import Variable
 
 from ee_final_project.dataset_creation.dataset_base import MNISTNumbersDataset
+from ee_final_project.env import BATCH_SIZE, DIGIT_DIR, EPOCHS, NUM_OF_DIGITS, device
 
 from .gan_base import Discriminator, Generator
 
