@@ -2,8 +2,8 @@ import asyncio
 import random
 
 import torch
-from env import (
-    DATASET_DIR,
+
+from ee_final_project.env import (
     DIGIT_DIR,
     DISTRIBUTION,
     NUM_OF_DIGITS,
@@ -62,7 +62,9 @@ async def create_dataset(
     return dataset, numbers
 
 
-async def create_datasets() -> tuple[MNISTNumbersDataset, MNISTNumbersDataset, list[int]]:
+async def create_datasets() -> tuple[
+    MNISTNumbersDataset, MNISTNumbersDataset, list[int]
+]:
     print("creating training dataset")
     training_dataset, training_list = await create_dataset(
         NUM_OF_DIGITS,

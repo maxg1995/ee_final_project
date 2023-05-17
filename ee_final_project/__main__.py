@@ -2,11 +2,11 @@ import asyncio
 import csv
 from pathlib import Path
 
-from dataset_creation.create_dataset import create_datasets
-from env import DIGIT_DIR, SAMPLES_DIR
-from gan.generate_synthetic_dataset import generate_synthetic_dataset
-from gan.train_gan import train_gan
-from ocr.ocr import convert_images_to_text
+from ee_final_project.dataset_creation.create_dataset import create_datasets
+from ee_final_project.env import DIGIT_DIR, SAMPLES_DIR
+from ee_final_project.gan.generate_synthetic_dataset import generate_synthetic_dataset
+from ee_final_project.gan.train_gan import train_gan
+from ee_final_project.ocr.ocr import convert_images_to_text
 
 
 def save_result_to_csv(results: list[str], list_type: str):

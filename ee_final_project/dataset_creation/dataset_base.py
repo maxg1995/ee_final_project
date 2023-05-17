@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 import torch
 import torchvision
-from env import DATASET_DIR, NUM_OF_DIGITS
 from torch.utils.data import DataLoader, Dataset
 from torchvision import datasets, transforms
+
+from ee_final_project.env import DATASET_DIR, NUM_OF_DIGITS
 
 
 class MNISTNumberGenerator:
