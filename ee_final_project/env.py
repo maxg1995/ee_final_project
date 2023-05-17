@@ -3,7 +3,7 @@ import os
 import torch
 
 NUM_OF_DIGITS = int(os.getenv("NUM_OF_DIGITS", 4))
-DATASET_DIR = os.getenv("DATASET_DIR", "data")
+DATASET_DIR = os.getenv("DATASET_DIR", "/storage/Raz/data")
 DIGIT_DIR = f"{DATASET_DIR}/{NUM_OF_DIGITS}_digit_model"
 SAMPLES_DIR = f"{DIGIT_DIR}/samples"
 DISTRIBUTION = os.getenv("DISTRIBUTION", "uniform")
