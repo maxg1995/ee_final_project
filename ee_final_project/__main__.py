@@ -10,7 +10,7 @@ from ee_final_project.ocr.ocr import convert_images_to_text
 
 
 def save_result_to_csv(results: list[str], list_type: str):
-    path = f"/storage/Raz/{DIGIT_DIR}/{list_type}.csv"
+    path = f"{DIGIT_DIR}/{list_type}.csv"
     with open(
         path,
         "w",
