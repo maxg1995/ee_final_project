@@ -37,6 +37,14 @@ def generate_numbers_with_distribution(
             normal_number = max(0, int(random.normalvariate(mean, std_dev)))
             dataset.append(normal_number)
 
+    elif distribution == "div_3":
+        while len(dataset) < size_of_dataset:
+            digits = random.choices("0123456789", k=num_of_digits)
+            digit_sum = sum([int(digit) for digit in digits])
+            if digit_sum % 3 == 0:
+                div_3_number: str = "".join(digits)
+                dataset.append(int(div_3_number))
+
     return dataset
 
 
