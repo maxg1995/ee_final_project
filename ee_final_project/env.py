@@ -11,7 +11,7 @@ TRAIN_IMAGES_TO_GEN = int(os.getenv("TRAIN_IMAGES_TO_GEN", 120000))
 TEST_IMAGES_TO_GEN = int(os.getenv("TEST_IMAGES_TO_GEN", 30000))
 BATCH_SIZE = int(os.getenv("BATCH_SIZE", 64))
 EPOCHS = int(os.getenv("EPOCHS", 200))
-MODEL_PATH = os.getenv("MODEL_PATH", "/Users/razoren/data18_5/mnist_single_digit_model.zip")
+MODEL_PATH = os.getenv("MODEL_PATH", "Raz/data/mnist_single_digit_model")
 
 # Device configuration
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
