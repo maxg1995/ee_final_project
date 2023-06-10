@@ -45,6 +45,38 @@ def generate_numbers_with_distribution(
                 div_3_number: str = "".join(digits)
                 dataset.append(int(div_3_number))
 
+    elif distribution == "first_digit_equals_last_digit":
+        while len(dataset) < size_of_dataset:
+            digits = random.choices("0123456789", k=num_of_digits - 1)
+            print(digits)
+            for i in range(num_of_digits - 1):
+                if digits[i] != '0':
+                    break
+            print(i)
+            print(digits)
+            digits += [digits[i]]
+            print(digits)
+            first_digit_equals_last_digit_number: str = "".join(digits)
+            dataset.append(int(first_digit_equals_last_digit_number))
+
+    elif distribution == "first_digit_double_last_digit":
+        while len(dataset) < size_of_dataset:
+            digits = random.choices("01234", k=1)
+            digits += random.choices("0123456789", k=num_of_digits - 2)
+            for i in range(num_of_digits - 1):
+                if digits[i] != '0':
+                    break
+            digits += [str(int(digits[i]) * 2)]
+            first_digit_double_last_digit_number: str = "".join(digits)
+            dataset.append(int(first_digit_double_last_digit_number))
+
+    elif distribution == "even":
+        while len(dataset) < size_of_dataset:
+            digits = random.choices("0123456789", k=num_of_digits - 1)
+            digits.append(random.choice("02468"))
+            even_number: str = "".join(digits)
+            dataset.append(int(even_number))
+
     return dataset
 
 
