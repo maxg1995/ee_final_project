@@ -48,14 +48,10 @@ def generate_numbers_with_distribution(
     elif distribution == "first_digit_equals_last_digit":
         while len(dataset) < size_of_dataset:
             digits = random.choices("0123456789", k=num_of_digits - 1)
-            print(digits)
             for i in range(num_of_digits - 1):
                 if digits[i] != '0':
                     break
-            print(i)
-            print(digits)
             digits += [digits[i]]
-            print(digits)
             first_digit_equals_last_digit_number: str = "".join(digits)
             dataset.append(int(first_digit_equals_last_digit_number))
 
