@@ -72,6 +72,9 @@ def generate_numbers_with_distribution(
             digits.append(random.choice("02468"))
             even_number: str = "".join(digits)
             dataset.append(int(even_number))
+            
+    else:
+        print("Unrecognized distribution")
 
     return dataset
 
