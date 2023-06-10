@@ -31,7 +31,7 @@ async def main():
     print("finished training GAN, starting synthetic dataset creation")
     await generate_synthetic_dataset(G)
     result = OCR()
-    save_result_to_csv(result, "syntetic_set")
+    save_result_to_csv(result, "synthetic_set")
 
 
 if __name__ == "__main__":
