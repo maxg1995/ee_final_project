@@ -11,8 +11,10 @@ from ee_final_project.env import MODEL_PATH, SAMPLES_DIR
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def OCR():
-    print('strting OCR')
+    print('starting OCR')
     model = torch.load(MODEL_PATH)
+
+    print('OCR model opened successfully')
 
     transform = transforms.Compose(
     [transforms.ToTensor(),
@@ -26,7 +28,7 @@ def OCR():
                 image = transform(image)
                 images.append(image)
             except PIL.UnidentifiedImageError:
-                print("cannotidentify")
+                print("OCR cannot identify a sample")
 
     results = []
     for i, image in enumerate(images):
