@@ -67,16 +67,16 @@ In the final step, the resulting dataset from the OCR process is analyzed in con
 
 For our purposes, we chose to include four Matlab scripts that can be used to gain insight into the similarities and differences between the training and synthetic datasets.
 
-#### [`pdf.m`]()
+#### [`pdf.m`](./analyze/pdf.m)
 A basic way to see if the PDF of the training dataset is similar to that of the synthetic dataset.
 
-#### [`ks.m`]()
+#### [`ks.m`](./analyze/ks.m)
 Uses the Kolmogorov-Smirnov test to test if the two datasets were taken from the same distribution.
 
-#### [`digit_probabilities.m`]()
+#### [`digit_probabilities.m`](./analyze/digit_probabilities.m)
 Produces a graph showing the probabilities to find a given digit when looking at a specific digit place in a random number from a dataset. This visualization ignores the order of digits and shows us if a correlation in digit probabilities exists between two datasets.
 
-#### [`digit_pair_probabilities.m`]()
+#### [`digit_pair_probabilities.m`](./analyze/digit_pair_probabilities.m)
 Produces a heatmap where each square represents the probability to find the digit in the x-axis after the digit in the y-axis. This visualization can indicate semantic learning as opposed to syntactic learning by the GAN model.
 
 ![image](https://github.com/maxg1995/ee_final_project/assets/66733412/190493ad-44a2-4eac-a533-8327f8bd9f2d)
