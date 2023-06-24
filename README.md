@@ -12,7 +12,7 @@ The provided framework is made up of 4 steps/sections and was designed to genera
 In the first step, a list of numbers with a desired distribution or attribute is generated. This initial list serves as the basis for creating a dataset of handwritten numbers. The MNIST dataset is used for this purpose.
 The code for this step can be found in the `dataset_creation` folder.
 
-#### `database_base.py`
+#### [`dataset_base.py`](./ee_final_project/dataset_creation/dataset_base.py)
 ##### `MNISTNumberGenerator`
 This class represents a generator for MNIST numbers. It is used to create datasets and generate images of MNIST numbers.
 It does this with the following methods:
@@ -23,7 +23,7 @@ create_mnist_image_from_number(self, number: int) -> (torch.Tensor, str): Asynch
 ##### `MNISTNumbersDataset`
 This class represents a custom dataset containing MNIST numbers. It receives a list of tuples, each containing an image of a number and its label.
 
-#### `create_dataset.py`
+#### [`create_dataset.py`](./ee_final_project/dataset_creation/create_dataset.py)
 ##### generate_numbers_with_distribution`
 This function generates a list of numbers based on the specified distribution and parameters. The function receives the number of digits for the generated numbers, the amount of numbers to generate, and a string representing the distribution/attribute of the dataset. Some examples of distributions/attributes included in the code are uniform/normal distribution, even numbers and numbers where the first digit is double the last. New distributions/attributes can be added to this function for future experimentation.
 
@@ -41,9 +41,21 @@ Example of a generated number:
 ### GAN
 The second step involves training a GAN model using the prepared dataset. The generator is used to generate a synthetic dataset, that resembles the original dataset.
 
+#### [`gan_base.py`](./ee_final_project/gan/gan_base.py)
+This file contains the generator and discriminator classes of the GAN model with all of the hyper-parameters. The model is a modified version of the model specified [here](https://medium.com/intel-student-ambassadors/mnist-gan-detailed-step-by-step-explanation-implementation-in-code-ecc93b22dc60). The model can easily be switched out for a different one if the need to experiment on different types of models arrises.
+
+#### [`train_gan.py`](./ee_final_project/gan/train_gan.py)
+This file contains the training sequences for both the generator and the discriminator in the form of the `D_train` and `G_train` functions and a function called `train_gan` which utilizes both of the training functions.
+
+#### [`generate_synthetic_dataset.py`](./ee_final_project/gan/generate_synthetic_dataset.py)
+This file contains functions for creating a synthetic dataset. The `generate_image` function receives a trained Generator as an argument and saves an image that the Generator generates. The `generate_synthetic_dataset` function uses the `generate_image` function to asynchronously create a dataset of generated synthetic images.
+
+Examples of generated number images:
+
 ![image](https://github.com/maxg1995/ee_final_project/assets/66733412/4c42a01e-2b19-4bc2-9c75-285519405082)
 
-3. OCR - The next step is to use an OCR model (see theoretical background) to translate the synthetic dataset into actual numbers, resulting in a second list of numbers (the first being the original training dataset)
+### OCR
+The next step is to use an OCR model to translate the synthetic dataset into actual numbers, resulting in a second list of numbers (the first being the original training dataset). The OCR model included in this project was trained using [this notebook](./ee_final_project/ocr/scripts/)
 
 ![image](https://github.com/maxg1995/ee_final_project/assets/66733412/ed81a7ab-befd-4d46-8fea-99f0dbc3294e)
 
