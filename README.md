@@ -30,7 +30,7 @@ The `create_dataset` asynchronous function uses the `generate_numbers_with_distr
 
 The `create_datasets` asynchronous function creates both the training and test datasets of MNIST number images based on the specified parameters and distribution.
 
-Example of a generated number:
+Example of a number created from MNIST digits:
 
 ![image](https://github.com/maxg1995/ee_final_project/assets/66733412/fcb13c8e-734b-4c28-85d0-220df30da439)
 
