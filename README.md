@@ -85,21 +85,21 @@ Produces a heatmap where each square represents the probability to find the digi
 ## Environment Variables
 The [`env.py`](./ee_final_project/env.py) file contains the following environment variables that control different aspects of the framework:
 
-DISTRIBUTION (defaults to "uniform") - sets the distribution/attribute of the training dataset that will be created.
+* DISTRIBUTION (defaults to "uniform") - sets the distribution/attribute of the training dataset that will be created.
 
-NUM_OF_DIGITS (defaults to 4) - sets the number of digits for the training dataset.
+* NUM_OF_DIGITS (defaults to 4) - sets the number of digits for the training dataset.
 
-DATASET_DIR (defaults to "/storage/Raz/data") - sets the directory to save all of the generated data from the program.
+* DATASET_DIR (defaults to "/storage/Raz/data") - sets the directory to save all of the generated data from the program.
 
-TRAIN_IMAGES_TO_GEN (defaults to 120000) - sets the size of the training dataset.
+* TRAIN_IMAGES_TO_GEN (defaults to 120000) - sets the size of the training dataset.
 
-TEST_IMAGES_TO_GEN (defaults to 30000) - sets the size of the test dataset.
+* TEST_IMAGES_TO_GEN (defaults to 30000) - sets the size of the test dataset.
 
-BATCH_SIZE (defaults to 64)) - sets the batch size for pytorch (read about this [here](https://pytorch.org/docs/stable/data.html#loading-batched-and-non-batched-data_))
+* BATCH_SIZE (defaults to 64)) - sets the batch size for pytorch (read about this [here](https://pytorch.org/docs/stable/data.html#loading-batched-and-non-batched-data_))
 
-EPOCHS (defaults to 200) - sets the number of epochs for the training to run.
+* EPOCHS (defaults to 200) - sets the number of epochs for the training to run.
 
-MODEL_PATH (defaults to "/app/ee_final_project/ee_final_project/ocr/model/mnist_ocr_model") - tells the prgoram where to find the pre-trained ocr model.
+* MODEL_PATH (defaults to "/app/ee_final_project/ee_final_project/ocr/model/mnist_ocr_model") - tells the prgoram where to find the pre-trained ocr model.
 
 These variables can be set in the code by changing the default values or by setting the environment variables before running the program. When running in a docker container, the '-e' flag can be used to set environment variables.
 
